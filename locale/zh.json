@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Agent-Mix",
+    "description": "把十二种编程 Agent 工作流做成 DSH 模式，可在模式菜单切换，并优先接入 Rust 引擎。"
+  }
+}

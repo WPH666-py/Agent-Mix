@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Agent-Mix",
+    "description": "Twelve coding-agent workflows as selectable modes, with optional Rust-first external engines."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "agent-mix",
+  "version": "0.1.0",
+  "description": "Agent-Mix: twelve coding-agent workflows as selectable DeepSeek Harness modes, with optional Rust-first external engines.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./workflow": "./workflow.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "workflow.js",
+    "engine.js",
+    "workflows",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "VERIFICATION.md",
+    "PUBLISH.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "generate": "node scripts/generate-presets.mjs",
+    "test": "node --test",
+    "check": "node scripts/generate-presets.mjs --check && node --test"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "agent-preset",
+    "coding-agent",
+    "workflow",
+    "claude-code",
+    "codex",
+    "zcode",
+    "qoder",
+    "trae",
+    "kimi-code",
+    "workbuddy",
+    "hermes",
+    "opencode",
+    "cursor",
+    "kilo-code"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OWNER/Agent-Mix.git"
+  },
+  "homepage": "https://github.com/OWNER/Agent-Mix#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

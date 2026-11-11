@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Agent-Mix">
+  <defs>
+    <linearGradient id="am-ring" x1="32" y1="24" x2="224" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="0.5" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <linearGradient id="am-core" x1="92" y1="80" x2="168" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a5f3fc"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="54" fill="#0b1220"/>
+  <path d="M128 34 196 73v78l-68 39-68-39V73l68-39Z" fill="none" stroke="url(#am-ring)" stroke-width="12" stroke-linejoin="round"/>
+  <circle cx="128" cy="72" r="17" fill="#5eead4"/>
+  <circle cx="76" cy="158" r="17" fill="#fbbf24"/>
+  <circle cx="180" cy="158" r="17" fill="#f472b6"/>
+  <path d="M128 89v42M113 141l-24 8M143 141l24 8" stroke="#e2e8f0" stroke-width="9" stroke-linecap="round"/>
+  <path d="M128 112c14 0 24 9 24 21s-10 21-24 21-24-9-24-21" fill="none" stroke="url(#am-core)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="128" cy="133" r="6" fill="#f8fafc"/>
+</svg>
