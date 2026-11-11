@@ -78,6 +78,30 @@ Done
 selected the bundle; no manual `package.json` edit was needed. The throwaway
 profile was removed.
 
+## Public one-line installs
+
+Both published HTTPS tarball URLs were installed into fresh throwaway profiles:
+
+```text
+GitHub raw tarball -> agent-mix installed, bundle selected, 12 presets in dump-config
+Gitee raw tarball  -> agent-mix installed, bundle selected, 12 presets in dump-config (1.9s)
+```
+
+The GitHub raw endpoint produced two transient `ECONNRESET` warnings before
+succeeding; the Gitee endpoint completed without retries. Both installs needed
+no Git.
+
+The repository URL form was also attempted on this machine:
+
+```text
+$ dsh plugin add https://github.com/WPH666-py/Agent-Mix
+[ERROR] git ls-remote ... 'git' is not recognized
+```
+
+That failure is environmental, not a package defect: this machine has no Git.
+The no-Git tarball link is therefore the verified one-line path here, and the
+repository URL remains documented for machines with Git.
+
 The composition tree was also checked with:
 
 ```text

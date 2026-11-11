@@ -23,6 +23,7 @@
     "README.zh.md",
     "VERIFICATION.md",
     "PUBLISH.md",
+    "release/README.md",
     "LICENSE",
     "THIRD_PARTY_NOTICES.md"
   ],
@@ -52,9 +53,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OWNER/Agent-Mix.git"
+    "url": "git+https://github.com/WPH666-py/Agent-Mix.git"
   },
-  "homepage": "https://github.com/OWNER/Agent-Mix#readme",
+  "homepage": "https://github.com/WPH666-py/Agent-Mix#readme",
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"

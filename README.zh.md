@@ -9,29 +9,45 @@ Code、WorkBuddy、Hermes、OpenCode、Cursor、Kilo Code 的工作方式做成 
 
 ## 一行链接安装
 
-在 DSH Web 的 **插件 → 添加插件** 中粘贴仓库链接，或用 CLI：
+### 不需要 Git（已实测）
+
+在 DSH Web 的 **插件 → 添加插件** 中粘贴下面任一链接，或用 CLI：
 
 ```sh
-# GitHub
-dsh plugin add https://github.com/OWNER/Agent-Mix
+# Gitee（国内网络更快）
+dsh plugin add https://gitee.com/ph-wang_admin/Agent-Mix/raw/master/release/agent-mix-0.1.0.tgz
 
-# Gitee
-dsh plugin add https://gitee.com/OWNER/Agent-Mix
+# GitHub
+dsh plugin add https://raw.githubusercontent.com/WPH666-py/Agent-Mix/main/release/agent-mix-0.1.0.tgz
 ```
 
-把 `OWNER` 换成实际托管账号；如果使用命名 profile，在 `add` 前加
-`--profile <name>`。本地开发可以直接：
+这两条直接通过 HTTPS 安装打包好的 bundle，不需要 Git、npm 账号或构建步骤；
+两条都已在临时 DSH profile 中安装并确认会自动选中 `agent-mix` bundle。
+
+### 仓库链接（需要 Git）
+
+如果机器安装了 Git，也可以直接用仓库地址：
+
+```sh
+dsh plugin add https://github.com/WPH666-py/Agent-Mix
+dsh plugin add https://gitee.com/ph-wang_admin/Agent-Mix
+```
+
+没有 Git 时请用上面的 tarball 链接；否则 `pnpm` 会在 `git ls-remote` 阶段失败，
+还没开始下载包。命名 profile 在 `add` 前加 `--profile <name>`。
+
+本地开发可以直接：
 
 ```sh
 dsh plugin add "link:D:\projects-py\Agent-Mix"
 ```
 
-仓库还没有远端时，按 [PUBLISH.md](PUBLISH.md) 上传即可；上传后把上面的
-`OWNER` 换成你的账号，这一行就是安装命令。
-
 安装后**新建会话**，打开模式选择器，会看到十二个
 **Agent-Mix · <工作流>**。已有会话保持原模式；DSH 的预设是在会话第一轮开始前
 选定的，不能在同一会话里热切换。
+
+维护者发布说明见 [PUBLISH.md](PUBLISH.md)，无 Git 安装包说明见
+[release/README.md](release/README.md)。
 
 ## 模式
 

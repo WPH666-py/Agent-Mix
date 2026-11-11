@@ -9,23 +9,39 @@ mounts its own workflow pack, prompt, tool composition, and optional external
 engine. There is no separate runtime service to operate.
 
 The repository is the plugin. There is no build step and no runtime dependency:
-a single Git URL is enough.
+a single HTTPS URL is enough.
 
 ## Install with one link
 
-Paste the repository URL into **Plugins → Add plugin** in the DSH Web UI, or use
-the CLI:
+### No Git required (tested)
+
+Paste one of these into **Plugins → Add plugin** in the DSH Web UI, or run:
 
 ```sh
-# GitHub
-dsh plugin add https://github.com/OWNER/Agent-Mix
+# Gitee (fastest from mainland China)
+dsh plugin add https://gitee.com/ph-wang_admin/Agent-Mix/raw/master/release/agent-mix-0.1.0.tgz
 
-# Gitee
-dsh plugin add https://gitee.com/OWNER/Agent-Mix
+# GitHub
+dsh plugin add https://raw.githubusercontent.com/WPH666-py/Agent-Mix/main/release/agent-mix-0.1.0.tgz
 ```
 
-Replace `OWNER` with the account that hosts your fork. If you use a named
-profile, add `--profile <name>` before `add`.
+These install the packed bundle directly over HTTPS. They need no Git, no npm
+account, and no build step. Both links were installed and verified in a
+throwaway DSH profile.
+
+### Repository URL (requires Git)
+
+If Git is installed, the repository URL is enough:
+
+```sh
+dsh plugin add https://github.com/WPH666-py/Agent-Mix
+dsh plugin add https://gitee.com/ph-wang_admin/Agent-Mix
+```
+
+On a machine without Git, use the tarball link above; `pnpm` otherwise fails at
+`git ls-remote` before it can fetch the package.
+
+If you use a named profile, add `--profile <name>` before `add`.
 
 For local development:
 
@@ -38,10 +54,8 @@ twelve modes appear as **Agent-Mix · <workflow>**. Existing sessions keep the
 mode they already selected; Agent-Mix presets are chosen before the first turn,
 not swapped mid-session.
 
-> The exact single-line install depends on where you publish the repo. The
-> package is deliberately publish-ready for both GitHub and Gitee: no build,
-> no install script, no private registry. See [PUBLISH.md](PUBLISH.md) for the
-> upload checklist if you are creating the remote repository.
+See [PUBLISH.md](PUBLISH.md) for the maintainer publishing details and
+[release/README.md](release/README.md) for the no-Git artifact.
 
 ## Modes
 
